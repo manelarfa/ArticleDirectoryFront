@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default" >
+    <div class="container-fluid" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+            <a routerLink='/articles' (click)="onReset()" class="navbar-brand">Krafty</a>
+        </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a style="cursor: pointer;color: black;" class="dropdown-toggle" data-toggle="dropdown" role="button">Discover <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a (click)="onSelection('food')" style="cursor: pointer;">Food & Drink</a></li>
+                    <li><a (click)="onSelection('home-decor')" style="cursor: pointer;">Home decor & repair</a></li>
+                    <li><a (click)="onSelection('crafts')" style="cursor: pointer;">Crafts</a></li>
+                    <li><a (click)="onSelection('fashion')" style="cursor: pointer;">Fashion & beauty</a></li>
+                </ul>
+            </li>
+            <li><a routerLink='/articles/mypost' style="cursor: pointer;color:black" >My-Posts</a></li>
+        </ul>
+        <div class="col-sm-4 col-md-4">
+                <form #searchform="ngForm" (ngSubmit)="onSubmit(searchform)">
+                    <input type="text" id="keyword" ngModel name="keyword" required 
+                    placeholder="type keywords..">
+                    <input type="submit" [disabled]="!searchform.valid" value="Search">
+                </form>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="isAuthenticated">
+                <a style="cursor: pointer;" style="cursor: pointer;color:black" (click)="onLogout()">Sign-out</a>
+            </li>
+            <li *ngIf="!isAuthenticated">
+                <a  (click)="onLogin()" style="cursor: pointer;color:black;text-transform: uppercase;">LOGIN</a>
+            </li>
+            <li *ngIf="!isAuthenticated">    
+                <a  (click)="onRegister()" style="cursor: pointer;color:black;text-transform: uppercase;">SIGN-UP</a>
+            </li>
+        </ul>
+    </div>
+    
+    </div>
+</nav>

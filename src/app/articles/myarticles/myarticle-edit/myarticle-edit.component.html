@@ -1,0 +1,156 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">                        
+          <h1>{{editMode ? 'UPDATE' : 'ADD'}}  POST</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
+            <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label>Post Name</label>
+                    <input type="text" class="form-control" id="name" name="name" 
+                    placeholder="post name" formControlName="name">
+                    <span *ngIf="!articleForm.get('name').valid && articleForm.get('name').touched"class="help-block">
+                        <span *ngIf="articleForm.get('name').errors['required']">Post Name field is Required!</span>
+                    </span>
+                </div>                            
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea rows="5" cols="50" type="text" class="form-control" id="description" 
+                    name="description" placeholder="description" formControlName="description"></textarea>
+                    <span *ngIf="!articleForm.get('description').valid && articleForm.get('description').touched"class="help-block">
+                        <span *ngIf="articleForm.get('description').errors['required']">Description field is Required!</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label><br>
+                    <select class="mdb-select md-form" id="category" name="category" formControlName="category">
+                        <option value="" disabled selected>Choose category</option>
+                        <option value="food">FOOD & DRINK</option>
+                        <option value="home-decor">HOME DECOR & REPAIR</option>
+                        <option value="crafts">CRAFTS</option>
+                        <option value="fashion">FASHION & BEAUTY</option>
+                    </select>
+                    <span *ngIf="!articleForm.get('category').valid && articleForm.get('category').touched"class="help-block">
+                        <span *ngIf="articleForm.get('category').errors['required']">Please select a category!</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Image Url</label>
+                    <input type="text" class="form-control" id="imagePath"
+                    name="imagePath" placeholder="Image url" formControlName="imagePath" #imagePath>
+                    <span *ngIf="!articleForm.get('imagePath').valid && articleForm.get('imagePath').touched"class="help-block">
+                        <span *ngIf="articleForm.get('imagePath').errors['required']">Please provide your image path!</span>
+                    </span>
+                </div>  
+                
+                <div class="form-group">
+                <img [src]="imagePath.value" class="img-responsive">
+                </div>
+
+                <div class="form-group">
+                    <label>Author Name</label>
+                    <input type="text" class="form-control" id="author" [attr.disabled]="true"
+                    name="author" placeholder="Author name" formControlName="author">
+                    
+                </div>
+
+                <div class="form-group">
+                    <label>About Author</label>
+                    <textarea rows="5" cols="50" type="text" class="form-control" id="aboutauthor" 
+                    name="aboutauthor" placeholder="about author" formControlName="aboutauthor"></textarea>
+                    <span *ngIf="!articleForm.get('aboutauthor').valid && articleForm.get('aboutauthor').touched"class="help-block">
+                        <span *ngIf="articleForm.get('aboutauthor').errors['required']">Please provide a brief description about yourself!</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="text" class="form-control" id="date" 
+                    name="date" placeholder="date" formControlName="date" [attr.disabled]="true">
+                </div>
+
+                <div class="form-group">
+                    <label>Tip</label>
+                    <textarea rows="3" cols="50" type="text" class="form-control" id="tip" 
+                    name="tip" placeholder="add a tip" formControlName="tip"></textarea>
+                    <span *ngIf="!articleForm.get('tip').valid && articleForm.get('tip').touched"class="help-block">
+                        <span *ngIf="articleForm.get('tip').errors['required']">Please provide a piece of advice about your post!</span>
+                    </span>
+                </div>
+
+                <div class="form-group" formArrayName="things">
+                    <label *ngIf="getControlsOfThings().length>0">Things You'll Need</label>
+                    <div class="row"
+                    *ngFor="let thingCtrl of getControlsOfThings();let i=index"
+                    [formGroupName]="i"
+                    style="margin-top: 10px;">
+                        <div class="col-xs-10">
+                            <input type="text" placeholder="add Content" class="form-control" formControlName="desc">
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-default"
+                            (click)="onDeleteThing(i)">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                        <button type="button" class="btn btn-start-order"
+                        (click)="onAddThings()"
+                        >Add Content</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" formArrayName="steps">
+                    <label *ngIf="getControlsOfSteps().length>0" style="font-size: x-large;">STEPS TO PERFORM</label>
+                    <div class="row"
+                    *ngFor="let stepCtrl of getControlsOfSteps();let i=index"
+                    [formGroupName]="i"
+                    style="margin-top: 10px;">
+                        <div class="col-xs-10">
+                            <label style="font-weight: bold;font-size: x-large;">STEP {{i+1}}</label>
+                            <textarea rows="6" cols="50" type="text" placeholder="add a step" class="form-control"
+                             formControlName="desc"></textarea>
+                        </div>
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-default"
+                            (click)="onDeleteStep(i)">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="col-xs-10">
+                            
+                        <label>Image Url Step {{i+1}}</label>
+                            <input type="text" class="form-control" 
+                            placeholder="Image url" formControlName="imagePath" #StepimagePath>
+                        </div>
+                        <div class="col-xs-10">
+                            <img [src]="StepimagePath.value" class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                        <button type="button" class="btn btn-start-order"
+                        (click)="onAddSteps()"
+                        >Add Step</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" >
+                    <button type="submit" class="btn btn-start-order"
+                     [disabled]=!articleForm.valid>SAVE</button>
+                    <button type="button" class="btn btn-start-order" (click)="onCancel()">CLEAR</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+  </div>

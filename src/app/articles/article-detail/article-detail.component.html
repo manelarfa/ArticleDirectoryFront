@@ -1,0 +1,60 @@
+<div class="col-xs-12">
+<div [ngStyle]="{ 'background-image': 'url(' + article.imagePath + ')','background-repeat': 'no-repeat',
+ 'height':'600px', 'background-size': '100% 600px','filter':'blur(2px)'}"></div>
+<div class="banner-text">
+    <h1>{{article.name}}</h1>
+    <h3>{{article.description}}</h3>
+</div>
+</div>
+<h2>MADE BY <span data-toggle="modal" data-target="#myModal" style="text-decoration: underline;cursor: pointer;">{{article.author}}</span>.CREATED ON {{article.date}}</h2>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 style="color: palevioletred;font-weight: bolder;" class="modal-title">{{article.author}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{article.aboutauthor}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-xs-8">
+  <h1 style="font-family: 'Bowlby One SC';">Things you'll need</h1>
+  <div style="border: 2px solid lightslategrey;">
+<ol *ngFor="let articleElthing of article.things; let i= index">
+  <li><span style="color: brown;font-weight: bold;">{{i+1}}.</span> {{articleElthing.desc}}</li>
+</ol>
+</div>
+<h2 style="font-family: 'Bowlby One SC';"><i class="fas fa-atom"></i> Tip</h2>
+<div class="panel panel-default">
+  <div class="panel-body"><h3>{{article.tip}}</h3></div>
+</div>
+  <div *ngFor="let articleElStep of article.steps; let i= index">
+    <h1 style="font-family: 'Bowlby One SC';">STEP {{i+1}}</h1>
+    <h3>{{articleElStep.desc}}</h3>
+    <img src="{{articleElStep.imagePath}}" alt="step {{i+1}}">
+  </div>
+</div>
+<div class="col-xs-4 sticky">
+<h2 style="font-family: 'Bowlby One SC';">RECENT POSTS</h2>
+<hr style="border: 2px solid black;">
+<ng-container *ngFor="let articleEl of articles.slice().reverse(); let i= index">
+  <div *ngIf="i<5">
+  <a style="cursor: pointer;text-decoration: none;" (click)="onSelection(articles.length-i-1)">
+  <span class="sticky-number" >{{i+1}}.</span>
+  <span class="sticky-text">{{articleEl.name}}</span>
+  </a>
+  <br /><br />
+  </div>
+</ng-container>
+</div>
+</div>
+

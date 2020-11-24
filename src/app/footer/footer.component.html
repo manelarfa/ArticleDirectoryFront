@@ -1,0 +1,30 @@
+<br><br><br><br>
+<footer>
+    <div class="footer-container">
+        <div class="left-col">
+            <a routerLink='/articles' (click)="onReset()" style="cursor: pointer;text-decoration: none;" >
+            <span style="font-family: 'Bungee Shade';color: #DC143C;font-size:7vh;">Krafty</span></a>
+            <div class="social-media">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <h6 style="font-family: 'Gugi';" class="rights-text">Copyright &#169; Krafty India,Inc. All rights reserved</h6>
+        </div>
+        <div class="right-col">
+            <h1 style="font-size: 8vh;color: #DC143C;font-family: 'Monofett';">Our Newsletter</h1>
+            <hr class="border">
+            <p style="font-family: 'Gugi';">Enter Your Email to get our news and updates.</p>
+
+            <form class="newsletter-form" #subscribeform="ngForm" (ngSubmit)="onSubmit(subscribeform)">
+              <input type="email" id="email" class="txtb" placeholder="Enter Your Email" spellcheck="false"
+              ngModel name="email" #email="ngModel" email required>
+              <button type="submit" class="btn" [disabled]="!subscribeform.valid">Subscribe</button>
+            </form>
+            <app-alert [message]="error" *ngIf="error" (close)="onClose()"></app-alert>
+            <app-alert [message]="success" *ngIf="success" (close)="onClose()"></app-alert>
+          </div>
+    </div>
+</footer>

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="content">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <app-alert [message]="error" *ngIf="error" (close)="onClose()"></app-alert>
+        <div *ngIf="isLoading" style="text-align: center;">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+      <div class="text-center" *ngIf="!isLoading">
+           <div class="header-title">
+              <h1>
+                LOGIN
+              </h1>
+              <h4>
+                 Login or register from here to gain access.
+              </h4>
+           </div>
+        </div>
+      </div>
+    </div>
+    
+   <div class="row">
+    <div class="col-xs-4 col-xs-offset-4 text-center">
+        <div class="form">
+            <form  #authform="ngForm" (ngSubmit)="onSubmit(authform)" *ngIf="!isLoading">
+                <div class="form-group">
+                    <input type="text" id="username" class="form-control" placeholder="Username"
+                    ngModel name="username" required #username="ngModel">
+                    <span *ngIf="!username.valid && username.touched" class="help-block">This field is required!</span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" class="form-control"
+                    ngModel name="password" 
+                    required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{6,50})" #password="ngModel">
+                    <span *ngIf="!password.valid && password.touched" class="help-block">
+                        Password requires at least 1 lower case character, 1 upper case character, 1 number, 
+                        1 special character and must be at least 6 characters and at most 50
+                    </span>              
+                </div>
+                <div class="text-center">
+                    <button type="submit" class=" btn btn-block send-button"
+                    [disabled]="!authform.valid">LOGIN</button>
+                </div>
+                <br>
+                <div class="text-center">
+                    <button type="button" class=" btn btn-block switch-button"
+                    (click)="onSwitchMode()">SWITCH TO SIGNUP</button>
+                </div>
+                <br />
+            </form>
+        </div>
+   </div>
+  </div>
+</div>
+</div>

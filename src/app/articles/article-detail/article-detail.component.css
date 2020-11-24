@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap');
+h1 {
+    text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    font-family: 'Pacifico', cursive;
+}
+h2,h3{
+    font-family: 'Odibee Sans';
+}
+.modal-content {
+    font-family: 'Pacifico', cursive;
+    color: black;
+    font-weight: bold;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+}
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 20px;
+    border-top-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    border: 7px inset rosybrown;    
+}
+.banner-text h3 {
+    padding: 0 8%;
+    color: lightsteelblue;
+    text-shadow: #474747 3px 5px 2px;
+    font-family: 'Odibee Sans';
+    font-size: x-large;
+}
+
+ol {
+    list-style-type: none;
+    font-weight: bold;
+}
+li {
+    font-size: 2rem;
+    margin: 10px;
+}
+
+div.sticky {
+    position: sticky;
+    top: 0;
+    padding: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .sticky-number {
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'Bowlby One SC';
+  }
+  .sticky-text {
+      color: indianred;
+    text-shadow: 0 0 3px wheat;
+      font-weight: bold;
+      font-family: 'Fredoka One';
+  }

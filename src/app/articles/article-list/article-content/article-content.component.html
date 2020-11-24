@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1 *ngIf="articles.length == 0">NO DATA FOUND</h1>
+    <h1 *ngIf="articles.length!=0">DIY & HOW-TO EVERYTHING</h1>
+  </div>
+</div>
+
+<br /><br />
+<div class="row">
+    <div class="col-xs-12">
+        <div class="container" style="min-height:100vh ;">
+        <ng-container *ngFor="let articleEl of articles; let i= index">
+            <div *ngIf="(selectionCategory=='' && searchedKeyword=='') || 
+            onSelectCategory(articleEl.category) || onSearchKeyword(articleEl.name)"
+             class="article">
+              <a style="cursor: pointer;text-decoration: none;"
+              [routerLink]="[i]">
+                <img src={{articleEl.imagePath}} alt="{{articleEl.name}}">
+                <h3 style="color: black;">{{articleEl.name}}</h3>
+                <p style="color: maroon;">{{articleEl.description.substring(0, 300)}}...</p>
+                <p style="color: black;">{{articleEl.author}}</p>
+              </a>
+            </div>
+        </ng-container>
+    </div>
+    </div>
+</div>

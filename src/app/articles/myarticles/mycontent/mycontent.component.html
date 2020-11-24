@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-xs-12">
+      <h1>MY ARTICLES</h1>
+    </div>
+</div>
+<br /><br />
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <a routerLink='new' class="bttn" (click)="onAddPost()">add post</a> 
+    </div>
+  </div>
+</div>
+<br /><br />
+<div class="row" style="min-height:100vh;" *ngIf="count==0">
+  <main>
+    <div class="square">
+      <img src="assets\images\1068428.png" class="mask"><br>
+   <h2>YOU HAVEN'T ADDED ANYTHING YET</h2><br />
+      <p>Click on the above or below icon to add something to your article list.</p>
+      
+   <div><a routerLink='new' (click)="onAddPost()" class="button">WRITE</a></div>
+    </div>
+    
+    </main>
+</div>
+
+<div class="row">
+  <div style="text-align: center;font-family: 'Mogra', cursive;" class="col-xs-12" *ngIf="count>0">
+    <h1>TO HAVE CONTRIBUTED {{count}} ARTICLES</h1>
+  </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="container">
+        <ng-container *ngFor="let articleEl of articles; let i= index">
+            <div *ngIf="onSelectAuthor(articleEl.author)"
+             class="article">
+              <a style="cursor: pointer;text-decoration: none;"
+              [routerLink]="['/articles',i]">
+                <img src={{articleEl.imagePath}} alt="Art-img" >
+                <h3 style="color: black;">{{articleEl.name}}</h3>
+                <p style="color: maroon;">{{articleEl.description.substring(0, 300)}}...</p>
+                <p style="color: black;">{{articleEl.author}}</p>
+              </a>
+              <div class="dropdown">
+                <button style="border-radius: 100px;outline: none;" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="dot"></span>
+               <span class="dot"></span>
+                <span class="dot"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a [routerLink]="[i,'edit']" 
+                    style="cursor: pointer;font-family: 'Fugaz One';">EDIT</a></li>
+                  <li><a (click)="onDelete(i)" 
+                    style="cursor: pointer;font-family: 'Fugaz One';">DELETE</a></li>
+                </ul>
+              </div>
+            </div>
+        </ng-container>
+    </div>
+    </div>
+</div>

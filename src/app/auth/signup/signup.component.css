@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee|Bungee+Inline|Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Salsa|Titan+One&display=swap');
+
+input.ng-invalid.ng-touched {
+    border: 1px solid tomato;
+}
+
+
+h1{
+    font-family: 'Bungee', cursive;
+}
+h4 {
+    font-family: 'Bungee Inline', cursive;
+}
+h5 {
+    font-family: 'Salsa', cursive;
+}
+
+span{
+    text-align: left;
+    font-family: 'Salsa', cursive;
+}
+
+button {
+    font-family: 'Titan One', cursive;
+}
+
+.container {
+    margin-top:5vh;
+    margin-bottom: 20vh;
+}
+
+.send-button{
+    background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+    width:100%;
+    font-weight: 600;
+    color:black;
+    padding: 8px 25px;
+    }
+
+.switch-button {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    width:100%;
+    font-weight: 600;
+    color:black;
+    padding: 8px 25px;
+    }
+    
+.header-title{
+    margin-top: 100px;
+    }
+
+    
+button[disabled]{
+    opacity: 1;
+}
+
+::placeholder{
+	color:indianred;
+	font-family: 'Bungee Inline';
+  }
+  .content {
+    border: 20px solid transparent;
+	border-image:linear-gradient(to right, #ffafbd, #ffc3a0); 
+	background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+	border-image-slice: 1;
+}

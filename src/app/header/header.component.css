@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap');
+
+.navbar{   
+    font-size: xx-large;
+    background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+    border: none;
+}
+
+.navbar-brand{
+font-size: xx-large;
+color: maroon;
+cursor: pointer;
+font-family: 'Bungee Shade';
+background: linear-gradient(to right, #200122, #6f0000);
+background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.navbar-header {
+    font-family: 'Pacifico', cursive;
+    font-weight: bolder;
+}
+.navbar-collapse {
+    font-family: 'Luckiest Guy', cursive;
+}
+/*search-box*/
+input {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+input[type="text"] {
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 25px 0 0 25px;
+    padding: 0 25px;
+}
+
+input[type="submit"] {
+    height: 40px;
+    width: 100px;
+    border-radius: 0 25px 25px 0;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    background-color: salmon;
+    color: black;
+}
+
+input[type="submit"]:hover {
+background-color: crimson;
+}

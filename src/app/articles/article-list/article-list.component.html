@@ -1,0 +1,16 @@
+<div class="col-lg-6" id="heading" *ngIf="featuredArticle">
+  <section>
+      <h2>{{featuredArticle.name}} <hr>
+      <p style="font-family: sans-serif;font-size: small;">-{{featuredArticle.author}}</p></h2>
+  </section>
+</div>
+<div class="col-lg-6" *ngIf="featuredArticle">
+ <a style="cursor: pointer;" [routerLink]="[featuredArticleid]"> <img 
+  src="{{featuredArticle.imagePath}}"
+  class="responsive">
+</a>
+</div>
+
+<div class="col-xs-12">
+<router-outlet></router-outlet>
+</div>

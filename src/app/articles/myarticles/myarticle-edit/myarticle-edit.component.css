@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Monoton|Saira+Stencil+One&display=swap');
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid tomato;
+}
+
+div{
+    font-family: 'Pacifico', cursive;
+  }
+  
+h1 {
+	font-family: 'Monoton';
+}
+textarea {
+	resize: none;
+}
+.form-label {
+	font-size: 12px;
+	color: #5e9bfc;
+	margin: 0;
+	display: block;
+	opacity: 1;
+}
+.form-control {
+	border-color: #ccc;
+   	border-width: 0 0 2px 0;
+   	border-style: none none solid none;
+    box-shadow: none;
+    font-size: medium;
+}
+.form-control:focus {
+	box-shadow: none;
+	border-color: #5e9bfc;
+}
+.btn-start-order {
+	background: 0 0 #ffffff;
+    border: 1px solid #2f323a;
+    color: #2f323a;
+    font-family: 'Saira Stencil One';
+	font-size: 16px;
+	font-weight: bolder;
+    margin: 30px 0;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    transition: all 0.25s ease 0s;
+}
+.btn-start-order:hover{
+	border-color: lightsalmon;
+	color: lightcoral;
+}
+::placeholder,select {
+	color:lightcoral;
+	font-family: 'Bungee Inline';
+  }
+  .btn-default:hover {
+	  color:white;
+	  background-color: black;
+  }
+  input[disabled]{
+	  background-color: white;
+	color:lightcoral;
+	font-family: 'Bungee Inline';
+}

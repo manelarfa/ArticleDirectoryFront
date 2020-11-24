@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One|Rye&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
+  img{
+    border-radius: 50px;
+  }
+  
+  h1 {
+      color:#2F4F4F		;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: salmon;
+      font-weight: bold;
+      background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+  
+  div{
+    font-family: 'Pacifico', cursive;
+  }
+  
+   .container {
+      display: flex;
+      width: auto;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .article {
+      background-color: #fff;
+      padding: 30px;
+      margin: 10px 10px;
+      width: 31%;
+      color: #666666;
+      box-sizing: border-box;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .article img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .article h2 {
+      color: #444;
+      margin-top: 0;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    
+    .box{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform : translate(-50% ,-50%);
+    }
+    
+    .bttn{
+      text-decoration: none;
+      text-transform:uppercase;
+      position:relative;
+      top:0;
+      left:0;
+      background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+      font-family: 'Lilita One';
+      font-weight: bold;
+      color:#000;
+      cursor: pointer;
+      padding:20px 40px;
+      border-radius:100px;
+      transition: all .5s;
+    }
+    .bttn:hover{
+       box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+       transform : translateY(-3px);
+    }
+    
+    
+    

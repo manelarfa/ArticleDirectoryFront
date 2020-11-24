@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fascinate&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monofett&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Monoton|Saira+Stencil+One&display=swap');
+
+input.ng-invalid.ng-touched {
+  border: 1px solid tomato;
+}
+
+  footer{
+    background: linear-gradient(to right, #ee9ca7, #ffdde1);
+    padding: 50px 0;
+  }
+  .footer-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .social-media {
+    margin: 20px 0;
+  }
+  
+  .social-media a {
+    color: #B22222;
+    margin-right: 25px;
+    font-size: 22px;
+    text-decoration: none;
+    transition: .3s linear;
+  }
+  
+  .social-media a:hover{
+    color: darkslategrey;
+  }
+
+  .fa-twitter {
+    color: #4099FF;
+}
+
+.fa-facebook-f {
+    color: #3B5998;
+}
+
+.fa-youtube {
+    color: #e52d27;
+}
+
+.fa-instagram {
+    color: hotpink;
+}
+
+.fa-linkedin-in {
+    color: #007bb6;
+}
+
+  
+  
+  .border{
+    border: 3px solid #B22222;
+    border-radius: 5px;
+  }
+  
+  .newsletter-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .txtb{
+    padding: 18px 40px;
+    font-size: 16px;
+    color: #293043;
+    background: #ddd;
+    font-weight: bold;
+    border:none;
+    outline: none;
+    border-radius: 30px;
+    min-width: 260px;
+  }
+  
+  .btn{
+    padding: 18px 40px;
+    font-size: 16px;
+    color: #f1f1f1;
+    background: #DC143C;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-left: 20px;
+    transition: opacity .3s linear;
+  }
+  
+  .btn:hover{
+    opacity: .7;
+  }
+  .btn:focus {
+    outline: none;
+  }
+  button[disabled]{
+    opacity: 1;
+  }
+  @media screen and (max-width:960px) {
+    .footer-container{
+      max-width: 600px;
+    }
+    .right-col{
+      width: 100%;
+      margin-bottom: 60px;
+    }
+  
+    .left-col{
+      width: 100%;
+      text-align: center;
+    }
+  }
+  ::placeholder,select {
+    color:#DC143C	;
+    font-family: 'Bungee Inline';
+    }
